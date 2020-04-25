@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Reaction Game</string>
+    <string name="singleButton">One Player Game</string>
+    <string name="multiButton">Two Player Game</string>
 </resources>
