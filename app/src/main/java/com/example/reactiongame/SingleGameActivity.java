@@ -17,6 +17,8 @@ import timerx.TimerBuilder;
 public class SingleGameActivity extends AppCompatActivity {
     private Stopwatch stopwatch;
 
+    private Timer timer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,37 +30,44 @@ public class SingleGameActivity extends AppCompatActivity {
         .startFormat("SS.LL")
         // When time is equal to one hour, change format to "HH:MM:SS"
         .build();
-
-
-        Random random = new Random();
-        //int number = random.nextInt(3000) + 2000;
-
-        Timer timer = new TimerBuilder()
-        // Set start time
-        .startTime(5000, TimeUnit.MILLISECONDS)
-        // Set start format of time
-        .startFormat("SS.LL")
-        // Executing action
-        .actionWhen(0, TimeUnit.MILLISECONDS, () -> {
-            findViewById(R.id.redButton).setVisibility(View.GONE);
-            findViewById(R.id.tooEarly).setVisibility(View.GONE);
-            findViewById(R.id.greenButton).setVisibility(View.VISIBLE);
-            // Start stopwatch
-            stopwatch.start();
-
-        })
-        .build();
-
-        timer.start();
-
-
+        buildTimer();
     }
 
 
     private void dontPress() {
         findViewById(R.id.redButton).setVisibility(View.GONE);
         findViewById(R.id.tooEarly).setVisibility(View.VISIBLE);
-        //findViewById(R.id.tooEarly).setOnClickListener(unused -> onCreate())
+        timer.stop();
+        findViewById(R.id.tooEarly).setOnClickListener(unused -> startAgain());
+    }
+
+    private void buildTimer() {
+        Random random = new Random();
+        int number = random.nextInt(3000) + 2000;
+
+        timer = new TimerBuilder()
+                // Set start time
+                .startTime(number, TimeUnit.MILLISECONDS)
+                // Set start format of time
+                .startFormat("SS.LL")
+                // Executing action
+                .actionWhen(0, TimeUnit.MILLISECONDS, () -> {
+                    findViewById(R.id.redButton).setVisibility(View.GONE);
+                    findViewById(R.id.tooEarly).setVisibility(View.GONE);
+                    findViewById(R.id.greenButton).setVisibility(View.VISIBLE);
+                    // Start stopwatch
+                    stopwatch.start();
+
+                })
+                .build();
+        timer.start();
+    }
+    private void startAgain() {
+        findViewById(R.id.redButton).setVisibility(View.VISIBLE);
+        findViewById(R.id.tooEarly).setVisibility(View.GONE);
+        findViewById(R.id.greenButton).setVisibility(View.GONE);
+        findViewById(R.id.redButton).setOnClickListener(unused -> dontPress());
+        buildTimer();
     }
 
     private void greenButtonPress() {
