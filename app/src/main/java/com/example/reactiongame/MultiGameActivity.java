@@ -15,9 +15,16 @@ public class MultiGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multi);
-        findViewById(R.id.redButton1).setOnClickListener(unused -> dontPress());
 
+        findViewById(R.id.redButton1).setVisibility(View.VISIBLE);
+        findViewById(R.id.tooEarly1).setVisibility(View.GONE);
+        findViewById(R.id.greenButton1).setVisibility(View.GONE);
+        findViewById(R.id.redButton2).setVisibility(View.VISIBLE);
+        findViewById(R.id.tooEarly2).setVisibility(View.GONE);
+        findViewById(R.id.greenButton2).setVisibility(View.GONE);
 
+        findViewById(R.id.redButton1).setOnClickListener(unused -> dontPress1());
+        findViewById(R.id.redButton2).setOnClickListener(unused -> dontPress2());
 
         Timer timer = new TimerBuilder()
         // Set start time
@@ -40,10 +47,16 @@ public class MultiGameActivity extends AppCompatActivity {
         timer.start();
     }
 
-    private void dontPress() {
-        findViewById(R.id.redButton).setVisibility(View.GONE);
-        findViewById(R.id.tooEarly).setVisibility(View.VISIBLE);
-        //findViewById(R.id.tooEarly).setOnClickListener(unused -> onCreate())
+    private void dontPress1() {
+        findViewById(R.id.redButton1).setVisibility(View.GONE);
+        findViewById(R.id.tooEarly1).setVisibility(View.VISIBLE);
+        findViewById(R.id.greenButton1).setVisibility(View.GONE);
+    }
+
+    private void dontPress2() {
+        findViewById(R.id.redButton2).setVisibility(View.GONE);
+        findViewById(R.id.tooEarly2).setVisibility(View.VISIBLE);
+        findViewById(R.id.greenButton2).setVisibility(View.GONE);
     }
 
 

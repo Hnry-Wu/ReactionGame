@@ -58,7 +58,7 @@ public class SingleGameActivity extends AppCompatActivity {
     private void dontPress() {
         findViewById(R.id.redButton).setVisibility(View.GONE);
         findViewById(R.id.tooEarly).setVisibility(View.VISIBLE);
-        //findViewById(R.id.tooEarly).setOnClickListener(unused -> onCreate())
+
     }
 
     private void greenButtonPress() {
