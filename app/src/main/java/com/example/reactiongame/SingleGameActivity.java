@@ -17,8 +17,14 @@ import timerx.TimerBuilder;
 
 public class SingleGameActivity extends AppCompatActivity {
 
+    /**
+     * stores a stopwatch to keep track of reaction time
+     */
     private Stopwatch stopwatch;
 
+    /**
+     * stores a timer to be used in the random waiting time
+     */
     private Timer timer;
 
     @Override
@@ -26,16 +32,18 @@ public class SingleGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single);
         findViewById(R.id.redButton).setOnClickListener(unused -> dontPress());
-
+        // Declare new stopwatch object
         stopwatch = new StopwatchBuilder()
         // Set start format of time
         .startFormat("SS.LL")
-        // When time is equal to one hour, change format to "HH:MM:SS"
         .build();
         buildTimer();
     }
 
 
+    /**
+     * runs if screen is tapped too early. prompts user to restart the game
+     */
     private void dontPress() {
         findViewById(R.id.redButton).setVisibility(View.GONE);
         findViewById(R.id.tooEarly).setVisibility(View.VISIBLE);
@@ -43,6 +51,9 @@ public class SingleGameActivity extends AppCompatActivity {
         findViewById(R.id.tooEarly).setOnClickListener(unused -> startAgain());
     }
 
+    /**
+     * builds a timer to randomly set amount of time player has to wait before they can react
+     */
     private void buildTimer() {
         Random random = new Random();
         int number = random.nextInt(3000) + 2000;
@@ -65,6 +76,10 @@ public class SingleGameActivity extends AppCompatActivity {
                 .build();
         timer.start();
     }
+
+    /**
+     * resets the game if player wants to play again
+     */
     private void startAgain() {
         findViewById(R.id.redButton).setVisibility(View.VISIBLE);
         findViewById(R.id.tooEarly).setVisibility(View.GONE);
@@ -73,6 +88,9 @@ public class SingleGameActivity extends AppCompatActivity {
         buildTimer();
     }
 
+    /**
+     * once user reacts correctly, displays win screen with time and button to play again
+     */
     private void greenButtonPress() {
         stopwatch.stop();
         long timeTo = stopwatch.getTimeIn(TimeUnit.MILLISECONDS);
