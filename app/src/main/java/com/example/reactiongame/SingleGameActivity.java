@@ -104,7 +104,4 @@ public class SingleGameActivity extends AppCompatActivity {
         findViewById(R.id.playAgain).setVisibility(View.VISIBLE);
         findViewById(R.id.playAgain).setOnClickListener(unused -> startAgain());
     }
-
-
-
 }
