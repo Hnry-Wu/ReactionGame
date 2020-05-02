@@ -13,5 +13,6 @@
     <string name="greenButton2">Go</string>
     <string name="tooEarly1">Pressed too early. Player 2 wins. Press to restart.</string>
     <string name="tooEarly2">Pressed too early. Player 1 wins. Press to restart.</string>
-
+    <string name="winner1">Player 1 wins. Press to play again.</string>
+    <string name="winner2">Player 2 wins. Press to play again.</string>
 </resources>
