@@ -2,6 +2,7 @@ package com.example.reactiongame;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 //import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import timerx.Timer;
 import timerx.TimerBuilder;
 
 public class SingleGameActivity extends AppCompatActivity {
+
     private Stopwatch stopwatch;
 
     private Timer timer;
@@ -55,6 +57,7 @@ public class SingleGameActivity extends AppCompatActivity {
                     findViewById(R.id.redButton).setVisibility(View.GONE);
                     findViewById(R.id.tooEarly).setVisibility(View.GONE);
                     findViewById(R.id.greenButton).setVisibility(View.VISIBLE);
+                    findViewById(R.id.greenButton).setOnClickListener(unused -> greenButtonPress());
                     // Start stopwatch
                     stopwatch.start();
 
@@ -73,7 +76,15 @@ public class SingleGameActivity extends AppCompatActivity {
     private void greenButtonPress() {
         stopwatch.stop();
         long timeTo = stopwatch.getTimeIn(TimeUnit.MILLISECONDS);
-
+        stopwatch.reset();
+        findViewById(R.id.redButton).setVisibility(View.GONE);
+        findViewById(R.id.tooEarly).setVisibility(View.GONE);
+        findViewById(R.id.greenButton).setVisibility(View.GONE);
+        TextView text = (TextView) findViewById(R.id.winTime);
+        text.setText("Your Time: " + timeTo + "ms");
+        findViewById(R.id.winTime).setVisibility(View.VISIBLE);
+        findViewById(R.id.playAgain).setVisibility(View.VISIBLE);
+        findViewById(R.id.playAgain).setOnClickListener(unused -> startAgain());
     }
 
 
