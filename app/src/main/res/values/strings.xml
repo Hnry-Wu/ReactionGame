@@ -4,5 +4,5 @@
     <string name="multiButton">Two Player Game</string>
     <string name="redButton">Get Ready</string>
     <string name="greenButton">Go</string>
-    <string name="tooEarly">Pressed too early. Click to restart</string>
+    <string name="tooEarly">Pressed too early. Click to restart.</string>
 </resources>
