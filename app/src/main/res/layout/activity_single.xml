@@ -20,4 +20,12 @@
         android:text="@string/tooEarly"
         tools:visibility="gone" />
 
+    <Button
+        android:id="@+id/greenButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/green"
+        android:text="@string/greenButton"
+        android:visibility="gone" />
+
 </LinearLayout>
