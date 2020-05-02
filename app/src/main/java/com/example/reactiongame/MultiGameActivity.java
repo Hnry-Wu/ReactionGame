@@ -15,10 +15,6 @@ import timerx.Timer;
 import timerx.TimerBuilder;
 
 public class MultiGameActivity extends AppCompatActivity {
-    /**
-     * stores a stopwatch to keep track of reaction time
-     */
-    private Stopwatch stopwatch;
 
     /**
      * stores a timer to be used in the random waiting time
@@ -42,16 +38,11 @@ public class MultiGameActivity extends AppCompatActivity {
         findViewById(R.id.redButton1).setOnClickListener(unused -> dontPress1());
         findViewById(R.id.redButton2).setOnClickListener(unused -> dontPress2());
 
-        // Declare new stopwatch object
-        stopwatch = new StopwatchBuilder()
-        // Set start format of time
-        .startFormat("SS.LL")
-        .build();
         buildTimer();
     }
 
     /**
-     * runs if screen is tapped too early. prompts user to restart the game
+     * runs if screen is tapped too early. prompts users to restart the game
      */
     private void dontPress1() {
         findViewById(R.id.redButton1).setVisibility(View.GONE);
@@ -90,8 +81,6 @@ public class MultiGameActivity extends AppCompatActivity {
 
                     findViewById(R.id.greenButton1).setOnClickListener(unused -> greenButtonPress1());
                     findViewById(R.id.greenButton2).setOnClickListener(unused -> greenButtonPress2());
-                    // Start stopwatch
-                    //stopwatch.start();
 
                 })
                 .build();
@@ -99,7 +88,7 @@ public class MultiGameActivity extends AppCompatActivity {
     }
 
     /**
-     * resets the game if player wants to play again
+     * resets the game if players wants to play again
      */
     private void startAgain() {
         findViewById(R.id.redButton1).setVisibility(View.VISIBLE);
@@ -117,7 +106,7 @@ public class MultiGameActivity extends AppCompatActivity {
     }
 
     /**
-     * once user reacts correctly, displays win screen with time and button to play again
+     * once first user reacts correctly, displays which user won and allows users to play again
      */
     private void greenButtonPress1() {
 
