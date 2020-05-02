@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/redButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/singleButton" />
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:text="@string/redButton"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/tooEarly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:text="@string/tooEarly"
+        tools:visibility="gone" />
+
 </LinearLayout>
