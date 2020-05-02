@@ -6,4 +6,12 @@
     <string name="greenButton">Go</string>
     <string name="tooEarly">Pressed too early. Press to restart.</string>
     <string name="playAgain">Play Again</string>
+
+    <string name="redButton1">Get Ready Player 1</string>
+    <string name="redButton2">Get Ready Player 2</string>
+    <string name="greenButton1">Go</string>
+    <string name="greenButton2">Go</string>
+    <string name="tooEarly1">Pressed too early. Player 2 wins. Press to restart.</string>
+    <string name="tooEarly2">Pressed too early. Player 1 wins. Press to restart.</string>
+
 </resources>
