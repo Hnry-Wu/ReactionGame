@@ -27,22 +27,22 @@ public class MultiGameActivity extends AppCompatActivity {
         findViewById(R.id.redButton2).setOnClickListener(unused -> dontPress2());
 
         Timer timer = new TimerBuilder()
-        // Set start time
-        .startTime(5000, TimeUnit.MILLISECONDS)
-        // Set start format of time
-        .startFormat("SS.LL")
-        // Executing action
-        .actionWhen(0, TimeUnit.MILLISECONDS, () -> {
-            findViewById(R.id.redButton1).setVisibility(View.GONE);
-            findViewById(R.id.tooEarly1).setVisibility(View.GONE);
-            findViewById(R.id.greenButton1).setVisibility(View.VISIBLE);
-            findViewById(R.id.redButton2).setVisibility(View.GONE);
-            findViewById(R.id.tooEarly2).setVisibility(View.GONE);
-            findViewById(R.id.greenButton2).setVisibility(View.VISIBLE);
-            // Start stopwatch
-            //stopwatch.start();
-        })
-        .build();
+                // Set start time
+                .startTime(5000, TimeUnit.MILLISECONDS)
+                // Set start format of time
+                .startFormat("SS.LL")
+                // Executing action
+                .actionWhen(0, TimeUnit.MILLISECONDS, () -> {
+                    findViewById(R.id.redButton1).setVisibility(View.GONE);
+                    findViewById(R.id.tooEarly1).setVisibility(View.GONE);
+                    findViewById(R.id.greenButton1).setVisibility(View.VISIBLE);
+                    findViewById(R.id.redButton2).setVisibility(View.GONE);
+                    findViewById(R.id.tooEarly2).setVisibility(View.GONE);
+                    findViewById(R.id.greenButton2).setVisibility(View.VISIBLE);
+                    // Start stopwatch
+                    //stopwatch.start();
+                })
+                .build();
 
         timer.start();
     }
