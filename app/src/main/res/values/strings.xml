@@ -17,5 +17,4 @@
     <string name="tooEarly2">Pressed too early. Player 1 wins. Press to restart.</string>
     <string name="winner1">Player 1 wins. Press to play again.</string>
     <string name="winner2">Player 2 wins. Press to play again.</string>
-    <string name="newHighScores">0 0 0 0 0 0 0 0 0 0</string>
 </resources>

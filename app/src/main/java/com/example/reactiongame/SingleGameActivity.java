@@ -94,8 +94,6 @@ public class SingleGameActivity extends AppCompatActivity {
     private void greenButtonPress() {
         stopwatch.stop();
         long timeTo = stopwatch.getTimeIn(TimeUnit.MILLISECONDS);
-        int[] highScores = getHighScores();
-        setHighScores(highScores, (int) timeTo);
         stopwatch.reset();
         findViewById(R.id.redButton).setVisibility(View.GONE);
         findViewById(R.id.tooEarly).setVisibility(View.GONE);
@@ -107,34 +105,4 @@ public class SingleGameActivity extends AppCompatActivity {
         findViewById(R.id.playAgain).setOnClickListener(unused -> startAgain());
     }
 
-    private int[] getHighScores() {
-        TextView text = (TextView) findViewById(R.id.highsScores);
-        String highScores = text.getText().toString();
-        String[] strArray = highScores.split("\n");
-        int[] hsArray = new int[strArray.length];
-        for (int i = 0; i < strArray.length; i++) {
-            hsArray[i] = Integer.parseInt(strArray[i]);
-        }
-        return hsArray;
-    }
-    private void setHighScores (int[] highScores, int newScore) {
-        StringBuilder hsString = new StringBuilder();
-        TextView text = (TextView) findViewById(R.id.highsScores);
-        for (int i = highScores.length - 1; i >= 0; i--) {
-            if (newScore < highScores[i] && i == 9) {
-                highScores[i] = newScore;
-            } else if (newScore < highScores[i]) {
-                int temp = highScores[i];
-                highScores[i] = highScores[i + 1];
-                highScores[i + 1] = temp;
-            } else {
-                break;
-            }
-        }
-        for (int i = 0; i < highScores.length; i++) {
-            hsString.append(highScores[i] + "\n");
-        }
-        text.setText(hsString.toString());
-
-    }
 }

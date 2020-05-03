@@ -18,7 +18,6 @@
         </activity>
         <activity android:name=".SingleGameActivity" />
         <activity android:name=".MultiGameActivity" />
-        <activity android:name=".HighScoresActivity" />
     </application>
 
 </manifest>
