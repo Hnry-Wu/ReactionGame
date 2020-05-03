@@ -16,5 +16,7 @@ public class MainActivity extends AppCompatActivity {
                 new Intent(this, SingleGameActivity.class)));
         findViewById(R.id.multiButton).setOnClickListener(unused -> startActivity(
                 new Intent(this, MultiGameActivity.class)));
+        findViewById(R.id.highscoreButton).setOnClickListener(unused -> startActivity(
+                new Intent(this, HighScoresActivity.class)));
     }
 }

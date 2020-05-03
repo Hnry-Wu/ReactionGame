@@ -2,6 +2,8 @@
     <string name="app_name">Reaction Game</string>
     <string name="singleButton">One Player Game</string>
     <string name="multiButton">Two Player Game</string>
+    <string name="highScoresButton">High Scores</string>
+
     <string name="redButton">Get Ready</string>
     <string name="greenButton">Go</string>
     <string name="tooEarly">Pressed too early. Press to restart.</string>
@@ -15,4 +17,5 @@
     <string name="tooEarly2">Pressed too early. Player 1 wins. Press to restart.</string>
     <string name="winner1">Player 1 wins. Press to play again.</string>
     <string name="winner2">Player 2 wins. Press to play again.</string>
+    <string name="newHighScores">0 0 0 0 0 0 0 0 0 0</string>
 </resources>
