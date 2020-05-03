@@ -63,7 +63,7 @@ public class MultiGameActivity extends AppCompatActivity {
      */
     private void buildTimer() {
         Random random = new Random();
-        int number = random.nextInt(3000) + 2000;
+        int number = random.nextInt(10000) + 3000;
 
         timer = new TimerBuilder()
                 // Set start time
