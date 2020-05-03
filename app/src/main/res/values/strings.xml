@@ -2,7 +2,6 @@
     <string name="app_name">Reaction Game</string>
     <string name="singleButton">One Player Game</string>
     <string name="multiButton">Two Player Game</string>
-    <string name="highScoresButton">High Scores</string>
 
     <string name="redButton">Get Ready</string>
     <string name="greenButton">Go</string>
