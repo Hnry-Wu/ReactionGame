@@ -56,7 +56,7 @@ public class SingleGameActivity extends AppCompatActivity {
      */
     private void buildTimer() {
         Random random = new Random();
-        int number = random.nextInt(10000) + 3000;
+        int number = random.nextInt(7000) + 3000;
 
         timer = new TimerBuilder()
                 // Set start time
