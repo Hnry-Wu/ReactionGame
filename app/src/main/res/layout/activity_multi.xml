@@ -18,7 +18,8 @@
             android:background="@color/red"
             android:text="@string/redButton1"
             app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:rotation = "180"/>
 
         <Button
             android:id="@+id/redButton2"
@@ -38,7 +39,8 @@
             android:layout_weight="1"
             android:background="@color/red"
             android:text="@string/tooEarly1"
-            tools:visibility="gone" />
+            tools:visibility="gone"
+            android:rotation = "180"/>
 
         <Button
             android:id="@+id/tooEarly2"
@@ -59,7 +61,8 @@
             android:background="@color/green"
             android:text="@string/greenButton"
             app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="gone" />
+            tools:visibility="gone"
+            android:rotation = "180"/>
 
         <Button
             android:id="@+id/greenButton2"
